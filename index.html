@@ -25,7 +25,7 @@
 }
 
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth; overflow-x:hidden;}
 body{
   margin:0;
   background:var(--bg);
@@ -33,6 +33,7 @@ body{
   font-family:var(--sans);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
 img{max-width:100%; display:block;}
 a{color:inherit;}
@@ -240,7 +241,7 @@ a:focus-visible, button:focus-visible, .card:focus-visible{
 
 .card-slot{
   perspective:1800px;
-  overflow:hidden;
+  -webkit-perspective:1800px;
 }
 
 .card{
@@ -262,18 +263,21 @@ a:focus-visible, button:focus-visible, .card:focus-visible{
   position:absolute; inset:0;
   transition:transform .7s cubic-bezier(.25,.9,.3,1.05);
   transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
 }
-.card.flipped .card-inner{transform:rotateY(180deg);}
+.card.flipped .card-inner{transform:rotateY(180deg); -webkit-transform:rotateY(180deg);}
 
 .card-face{
   position:absolute; inset:0;
   overflow:hidden;
   backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
   border:1px solid var(--ochre-line);
 }
 .card-front{background:var(--bg);}
 .card-back{
   transform:rotateY(180deg);
+  -webkit-transform:rotateY(180deg);
   background:var(--bg-raised);
   display:flex;
   flex-direction:column;
