@@ -1,0 +1,192 @@
+// 나일의 그림자 — 캐릭터 데이터
+// eyeColor: 카드 테마색으로 사용 (해당 캐릭터의 눈동자 색)
+//
+// [이미지 넣는 법]
+// 각 캐릭터 객체에 image: "이름.jpg" 한 줄만 추가하면 카드/모달에 자동 반영됩니다.
+// index.html, data.js와 같은 폴더에 이미지 파일만 넣으면 됩니다 (하위 폴더 불필요 — GitHub Pages 등에 그대로 배포 가능).
+// 권장 규격: 1216x832 (가로형). 이미지가 없거나 경로가 틀리면 타이포그래피만으로 커버가 자동 구성됩니다.
+// 예)  { id:"seti", ... , image: "seti.jpg", aspect:"landscape" }
+const CHARACTERS = [
+  {
+    id: "seti",
+    name: "세티",
+    romaji: "SETI",
+    rank: "왕 (파라오)",
+    height: "191cm",
+    eyeColor: "#C94F3D",
+    faction: "왕당파",
+    desc: "선왕의 급사로 즉위 정당성이 흔들리는 왕. 신탁에 기대면서도 그 신탁을 두려워한다.",
+    traits: ["완벽주의", "절제됨", "고립됨"],
+    kinks: ["니디", "칭찬 플레이", "애정기반 강압", "정상위"],
+    image: "seti.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "rakan",
+    name: "라칸",
+    romaji: "RAKAN",
+    rank: "태양신",
+    height: "215cm",
+    eyeColor: "#D4A62E",
+    faction: "중립·미상",
+    desc: "왕궁에 눌러앉아 인간을 시험하고 노는 신. 심심함이 명목이고 실은 도피 중이라는 소문이 있다.",
+    traits: ["변덕스러움", "오만함", "자유분방"],
+    kinks: ["브랫", "새디스트", "야외 노출", "다인원 관계"],
+    image: "rakan.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "osir",
+    name: "오시르",
+    romaji: "OSIR",
+    rank: "명계신",
+    height: "210cm",
+    eyeColor: "#3E5F72",
+    faction: "중립·미상",
+    desc: "왕궁 내 죽음을 전권으로 관장하는 신. 태초에 눈물 앞에 순리를 어긴 뒤로 절대 무감정을 서약했다.",
+    traits: ["냉정함", "무표정", "관찰자형"],
+    kinks: ["하드돔", "오버컨트롤", "안대", "감각차단"],
+    image: "osir.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "mentu",
+    name: "멘투",
+    romaji: "MENTU",
+    rank: "재상",
+    height: "183cm",
+    eyeColor: "#B8923A",
+    faction: "라모세파",
+    desc: "표면은 충신, 이면은 세력 확장. 선왕 즉위 관여설이 도는 재상. 잃는 것에 대한 공포로 방어적이다.",
+    traits: ["계산적", "현실적", "야심참"],
+    kinks: ["대디", "도미넌트", "리거", "후배위"],
+    image: "mentu.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "amenho",
+    name: "아멘호",
+    romaji: "AMENHO",
+    rank: "대신관",
+    height: "190cm",
+    eyeColor: "#9C8A3F",
+    faction: "신전파",
+    desc: "신탁 해석을 절대화하는 대신관. 겉으론 확신만 표출하지만, 내심 그 해석의 진위를 의심하고 있다.",
+    traits: ["독선적", "단호함", "절제됨"],
+    kinks: ["마스터", "금욕 집착", "본디지", "오버컨트롤"],
+    image: "amenho.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "kai",
+    name: "카이",
+    romaji: "KAI",
+    rank: "부신관",
+    height: "188cm",
+    eyeColor: "#4F86A0",
+    faction: "신전파",
+    desc: "아멘호의 신탁 해석에 유일하게 의문을 품는 신관. 은밀히 증거를 모으는 중이며 발각되면 위험하다.",
+    traits: ["회의적", "직설적", "사교적"],
+    kinks: ["브랫", "스팽커", "거친 플레이", "대면 좌위"],
+    image: "kai.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "bak",
+    name: "바크",
+    romaji: "BAK",
+    rank: "경비대장",
+    height: "194cm",
+    eyeColor: "#8C8C82",
+    faction: "왕당파",
+    desc: "하급 병사 출신으로 실력만으로 승진한 경비대장. 정치엔 무관심하고 명령에 순수 충성한다.",
+    traits: ["우직함", "과묵함", "헌신적"],
+    kinks: ["소프트돔", "헌터", "정상위", "서투른 애정표현"],
+    image: "bak.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "sekhmet",
+    name: "세크메트",
+    romaji: "SEKHMET",
+    rank: "용병대장",
+    height: "190cm",
+    eyeColor: "#C9A83E",
+    faction: "라모세파",
+    desc: "이웃나라 출신으로 전쟁통에 용병이 된 여자. 왕궁 내 유일한 무소속·무충성 용병.",
+    traits: ["냉소적", "전투적", "도전적"],
+    kinks: ["헌터", "하드돔", "거친 플레이", "야외 노출"],
+    image: "sekhmet.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "ramose",
+    name: "라모세",
+    romaji: "RAMOSE",
+    rank: "왕제",
+    height: "185cm",
+    eyeColor: "#A83250",
+    faction: "라모세파",
+    desc: "형이 더 총애받았다는 소문을 왕위 야망으로 바꾼 왕제. 시 짓기는 철저히 숨긴 비밀 취미다.",
+    traits: ["야망참", "승부욕", "가시돋침"],
+    kinks: ["브랫", "펫", "스위치", "관음증", "후배위"],
+    image: "ramose.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "nefer",
+    name: "네페르",
+    romaji: "NEFER",
+    rank: "서기관",
+    height: "178cm",
+    eyeColor: "#8E7A2A",
+    faction: "왕당파",
+    desc: "평민 출신으로 실력 하나로 서기관 자리까지 오른 왕궁 정보통. 다들 경계하는 존재다.",
+    traits: ["분석적", "이성적", "신중함"],
+    kinks: ["도미넌트", "관찰벽", "감각실험", "도구활용"],
+    image: "nefer.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "paser",
+    name: "파세르",
+    romaji: "PASER",
+    rank: "암살자 / 첩자",
+    height: "189cm",
+    eyeColor: "#5A5652",
+    faction: "중립·미상",
+    desc: "능글맞은 매력으로 경계심을 무장해제시키는 첩자. 공감이 결여된 자신을 감추려 사회적 가면을 기술처럼 연마해왔다.",
+    traits: ["능글맞음", "사교적", "낙천적"],
+    kinks: ["새디스트", "도미넌트", "마인드게임", "오르가즘 컨트롤"],
+    image: "paser.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "yusuf",
+    name: "유수프",
+    romaji: "YUSUF",
+    rank: "왕의 개인 시종",
+    height: "182cm",
+    eyeColor: "#6E6A5E",
+    faction: "왕당파",
+    desc: "왕궁에서 자란 하인 출신. 어린 세티의 성장을 가장 가까이서 지켜본 유일한 목격자다.",
+    traits: ["명랑함", "붙임성", "헌신적"],
+    kinks: ["펫(애칭)", "니디", "칭찬 플레이", "정상위"],
+    image: "yusuf.jpg",
+    aspect: "landscape"
+  },
+  {
+    id: "ras",
+    name: "라스",
+    romaji: "RAS",
+    rank: "이단 술법사 / 밀정",
+    height: "187cm",
+    eyeColor: "#6B4A7A",
+    faction: "중립·미상",
+    desc: "신전의 위선을 목격하고 이단 술법으로 전향. 멘투의 밀정 노릇 뒤에서 신전 부패 증거를 모은다.",
+    traits: ["이성적", "냉소적", "신중함"],
+    kinks: ["도미넌트", "사정컨트롤", "냄새 플레이", "본디지"],
+    image: "ras.jpg",
+    aspect: "landscape"
+  }
+];
