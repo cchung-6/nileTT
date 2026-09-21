@@ -592,7 +592,7 @@ a:focus-visible, button:focus-visible, .card:focus-visible{
           </div>
           <div class="card-content">
             <h3 class="card-name">${ch.name}</h3>
-            <div class="card-height">${ch.height}</div>
+            <div class="card-height">${ch.height} · ${ch.age}</div>
             <div class="card-traits">${ch.traits.map(t=>`<span>${t}</span>`).join('')}</div>
           </div>
           <span class="card-flip-hint">눌러서 상세보기</span>
@@ -604,7 +604,7 @@ a:focus-visible, button:focus-visible, .card:focus-visible{
           </div>
           <div class="card-back-heading">
             <h3 class="card-back-name">${ch.name}</h3>
-            <span class="card-back-romaji">${ch.romaji} · ${ch.height}</span>
+            <span class="card-back-romaji">${ch.romaji} · ${ch.height} · ${ch.age}</span>
           </div>
           <div class="card-back-body">
             <p class="card-back-desc">${ch.desc}</p>
